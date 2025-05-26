@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { Comuna } from './comuna.entity';
-import { ComunaService } from './comuna.service';
-import { ComunaController } from './comuna.controller';
+import { Comuna } from './comuna/entity/comuna.entity';
+import { ComunaService } from './comuna/service/comuna.service';
+import { ComunaController } from './comuna/controller/comuna.controller';
 
 @Module({
   imports: [
