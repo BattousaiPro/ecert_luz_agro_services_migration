@@ -1,6 +1,6 @@
 import { Controller, Get } from "@nestjs/common";
-import { ComunaService } from "./comuna.service";
-import { Comuna } from './comuna.entity'
+import { ComunaService } from "../service/comuna.service";
+import { Comunas } from "../entities/comuna.entity";
 
 @Controller('/comunas')
 export class ComunaController {
@@ -8,7 +8,7 @@ export class ComunaController {
     constructor(private readonly comunaService: ComunaService) {}
 
     @Get('/findAll')
-    getAll(): Promise<Comuna[]>{
+    getAll(): Promise<Comunas[]>{
         return this.comunaService.findAll();
     }
 }

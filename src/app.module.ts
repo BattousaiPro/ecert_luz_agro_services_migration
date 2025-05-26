@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { Comuna } from './comuna/entity/comuna.entity';
-import { ComunaService } from './comuna/service/comuna.service';
-import { ComunaController } from './comuna/controller/comuna.controller';
+import { Comunas } from './api/comuna/entities/comuna.entity';
+import { ComunaController } from './api/comuna/controller/comuna.controller';
+import { ComunaService } from './api/comuna/service/comuna.service';
 
 @Module({
   imports: [
@@ -15,10 +15,10 @@ import { ComunaController } from './comuna/controller/comuna.controller';
       username: 'u134865480_dev_root',
       password: 'Ge5]Kj2i?nA',
       database: 'u466446141_Test_Agro_BD',
-      entities:[Comuna],
+      entities:[Comunas],
       synchronize: false,
      }),
-    TypeOrmModule.forFeature([Comuna]),
+    TypeOrmModule.forFeature([Comunas]),
   ],
   controllers: [AppController, ComunaController],
   providers: [AppService, ComunaService],
