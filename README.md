@@ -18,6 +18,10 @@ cd ecert_luz_agro_services
 
 npm run start
 
+npm i @nestjs/typeorm
+npm install pg
+npm i typeorm
+
 
 
 
