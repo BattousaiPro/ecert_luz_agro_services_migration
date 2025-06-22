@@ -9,12 +9,12 @@ import { ComunaService } from './api/comuna/service/comuna.service';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type:'postgres',
+      type:'mysql',
       host:'82.197.82.107',
       port:3306,
       username: 'u134865480_dev_root',
       password: 'Ge5]Kj2i?nA',
-      database: 'u466446141_Test_Agro_BD',
+      database: 'u134865480_Test_Agro_BD',
       entities:[Comunas],
       synchronize: false,
      }),

@@ -9,8 +9,11 @@ https://github.com/BattousaiPro/ecert_luz_agro_services
 
 Steps to run this project:
 
+https://www.youtube.com/watch?v=RWUmlsdZ1e4&ab_channel=Bluuweb
 https://docs.nestjs.com/first-steps
 
+node version
+  * 20.14.0 (Currently using 64-bit executable)
 
 npm i -g @nestjs/cli
 
@@ -21,6 +24,11 @@ npm run start
 npm i @nestjs/typeorm
 npm install pg
 npm i typeorm
+npm i @nestjs/config
+npm i class-validator
+npm i class-transformer
+npm i mysql
+
 
 
 
