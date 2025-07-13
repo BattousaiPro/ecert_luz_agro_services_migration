@@ -12,7 +12,38 @@ export class ComunaService {
     private comunaRepository: Repository<Comunas>,
   ) { }
 
-  async findAll(filterExpenseDto: FilterExpenseDto): Promise<GenericResponse> {
+  async delete(codigo: number): Promise<GenericResponse> {
+    // console.log('method delete');
+    let resp: GenericResponse = new GenericResponse();
+    let RegistroToRemove: Comunas = new Comunas();
+    try {
+      RegistroToRemove = await this.comunaRepository.findOneBy({ codigo });
+      if (!RegistroToRemove) {
+        resp.code = '1';
+        resp.data = new Comunas();
+        resp.message = StatusCode.ERROR + ': Comuna no existe';
+        return resp;
+      }
+    } catch (error) {
+      resp.code = '-1';
+      resp.message = StatusCode.ERROR + ': Al buscar la Comuna';
+      resp.data = null;
+      return resp;
+    }
+
+    try {
+      const removeVal: Comunas = await this.comunaRepository.remove(RegistroToRemove);
+      resp.data = null;
+    } catch (error) {
+      console.log(JSON.stringify(error));
+      resp.code = '-2';
+      resp.message = StatusCode.ERROR;
+      resp.data = null;
+    }
+    return resp;
+  }
+
+  async findByFilter(filterExpenseDto: FilterExpenseDto): Promise<GenericResponse> {
     let resp: GenericResponse = new GenericResponse();
     try {
 
@@ -42,4 +73,5 @@ export class ComunaService {
     }
     return resp;
   }
+
 }
