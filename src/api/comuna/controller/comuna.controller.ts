@@ -1,14 +1,15 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Post, Body } from "@nestjs/common";
 import { ComunaService } from "../service/comuna.service";
-import { Comunas } from "../entities/comuna.entity";
+import { FilterExpenseDto } from "../dto/FilterComuna.dto";
+import { GenericResponse } from "src/api/genericDto/GenericResponse";
 
 @Controller('/comunas')
 export class ComunaController {
 
     constructor(private readonly comunaService: ComunaService) {}
 
-    @Get('/findAll')
-    getAll(): Promise<Comunas[]>{
-        return this.comunaService.findAll();
+    @Post('/findAll1')
+    getAll(@Body() filterExpenseDto: FilterExpenseDto): Promise<GenericResponse>{
+        return this.comunaService.findAll(filterExpenseDto);
     }
 }
