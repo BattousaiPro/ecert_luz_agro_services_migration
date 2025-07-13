@@ -5,6 +5,9 @@ import { AppService } from './app.service';
 import { Comunas } from './api/comuna/entities/comuna.entity';
 import { ComunaController } from './api/comuna/controller/comuna.controller';
 import { ComunaService } from './api/comuna/service/comuna.service';
+import { Sector } from './api/sector/entities/sector.entity';
+import { SectorController } from './api/sector/controller/sector.controller';
+import { SectorService } from './api/sector/service/sector.service';
 
 @Module({
   imports: [
@@ -15,12 +18,16 @@ import { ComunaService } from './api/comuna/service/comuna.service';
       username: 'u134865480_dev_root',
       password: 'Ge5]Kj2i?nA',
       database: 'u134865480_Test_Agro_BD',
-      entities:[Comunas],
+      entities:[Comunas,
+        Sector
+      ],
       synchronize: false,
      }),
-    TypeOrmModule.forFeature([Comunas]),
+    TypeOrmModule.forFeature([Comunas,
+      Sector
+    ]),
   ],
-  controllers: [AppController, ComunaController],
-  providers: [AppService, ComunaService],
+  controllers: [AppController, ComunaController, SectorController],
+  providers: [AppService, ComunaService, SectorService],
 })
 export class AppModule {}
