@@ -37,4 +37,5 @@ export class ComunaController {
     findByFilter(@Body() filterExpenseDto: FilterExpenseDto): Promise<GenericResponse> {
         return this.comunaService.findByFilter(filterExpenseDto);
     }
+
 }
