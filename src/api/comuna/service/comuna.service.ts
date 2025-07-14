@@ -12,6 +12,24 @@ export class ComunaService {
     private comunaRepository: Repository<Comunas>,
   ) { }
 
+  async getAll(codigo: number): Promise<GenericResponse> {
+    // console.log('method getAll');
+    let resp: GenericResponse = new GenericResponse();
+    return resp;
+  }
+
+  async new(codigo: number): Promise<GenericResponse> {
+    // console.log('method new');
+    let resp: GenericResponse = new GenericResponse();
+    return resp;
+  }
+
+  async edit(codigo: number): Promise<GenericResponse> {
+    // console.log('method edit');
+    let resp: GenericResponse = new GenericResponse();
+    return resp;
+  }
+
   async delete(codigo: number): Promise<GenericResponse> {
     // console.log('method delete');
     let resp: GenericResponse = new GenericResponse();
