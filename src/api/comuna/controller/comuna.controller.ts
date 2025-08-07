@@ -3,7 +3,12 @@ import { ComunaService } from "../service/comuna.service";
 import { FilterExpenseDto } from "../dto/FilterComuna.dto";
 import { GenericResponse } from "src/api/genericDto/GenericResponse";
 import { ComunaDto } from "../dto/comuna.dto";
+import { ApiTags } from "@nestjs/swagger";
 
+//@ApiSecurity("Bearer")
+//@ApiBearerAuth()
+@ApiTags("comuna")
+@Controller()
 @Controller('/comunas')
 export class ComunaController {
 

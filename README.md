@@ -29,7 +29,8 @@ npm i class-validator
 npm i class-transformer
 npm i mysql
 
-
+# Run Swagger
+  * http://localhost:3000/api/v1/swagger
 
 
 
